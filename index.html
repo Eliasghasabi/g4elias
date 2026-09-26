@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Elias Ghassabi — Frontend Engineer</title>
+<meta name="description" content="Elias Ghassabi, a frontend engineer interested in interactive experiences, scroll animations, and 3D interfaces on the web. Currently building personal projects and learning React, Three.js, and GSAP.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0A0A0A">
+
+<!-- Open Graph / social preview -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Elias Ghassabi — Frontend Engineer">
+<meta property="og:description" content="Interfaces built with a watchmaker's precision and an architect's boldness.">
+<meta property="og:image" content="/og-cover.jpg">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://eliasghassabi.dev/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="loading">
+<noscript>
+  <style>
+    .hero-3d-stage, .ambient-bg, .grid-bg, .noise-overlay, .scroll-progress, .loader, .hero-spotlight, .scroll-cue{ display:none; }
+    .hero-title .line{ color:var(--text) !important; filter:none !important; opacity:1 !important; transform:none !important; }
+    [class*="reveal-"]{ opacity:1 !important; transform:none !important; filter:none !important; }
+  </style>
+</noscript>
+
+<div class="loader" id="loader" aria-hidden="true">
+  <span class="loader-mark">Elias<span class="dot">.</span></span>
+</div>
+
+<div class="ambient-bg" aria-hidden="true">
+  <div class="ambient-blob b1"></div>
+  <div class="ambient-blob b2"></div>
+  <div class="ambient-blob b3"></div>
+</div>
+<div class="noise-overlay"></div>
+<div class="grid-bg"></div>
+
+<!-- progress -->
+<div class="scroll-progress"><div class="scroll-progress-bar" id="progressBar"></div></div>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo">Elias<span class="dot">.</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#approach">Approach</a>
+      <a href="#work">Work</a>
+      <a href="#social">Social</a>
+    </div>
+    <button type="button" class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+  </div>
+  <div class="nav-scrim" id="navScrim" aria-hidden="true"></div>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="top">
+  <div class="hero-3d-stage" id="heroStage">
+    <video
+      id="heroVideo"
+      class="hero-video"
+      src="hero-visual.mp4"
+      poster="hero-visual-poster.jpg"
+      autoplay muted loop playsinline
+      aria-label="An iridescent glossy ribbon slowly twisting and catching light"
+    ></video>
+    <div class="hero-video-scrim" aria-hidden="true"></div>
+  </div>
+  <div class="hero-spotlight" id="heroSpotlight" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <h1 class="hero-title">
+      <span class="line reveal-up" style="--d:0">Hey beautiful<span class="accent-word">,</span></span>
+      <span class="line reveal-up" style="--d:1">I'm <em>Elias</em></span>
+    </h1>
+  </div>
+
+  <div class="scroll-cue reveal-up" style="--d:3" id="scrollCue" aria-hidden="true">
+    <span class="scroll-cue-track"><span class="scroll-cue-dot"></span></span>
+    <span class="scroll-cue-label">Scroll</span>
+  </div>
+</section>
+
+<!-- ===================== ABOUT / STATS (pinned+parallax) ===================== -->
+<section class="about" id="about">
+  <div class="about-pin">
+    <div class="about-text">
+      <span class="section-tag reveal-wipe">01 — About</span>
+      <h2 class="split-reveal">Obsessed with browser details, frame rates, and easing curves. I believe the best interfaces are the ones with a <span class="hl">physical feel</span>.</h2>
+    </div>
+    <div class="about-bio parallax-el reveal-flip" style="--d:0" data-speed="0.12" data-tilt>
+      <p>
+        Yo, I'm Elyas. A 15-year-old kid from Mashhad, Iran, just trying to survive this crazy life and figure things out.
+
+I've always been that guy who wonders "how the hell does this stuff work?" — computers, phones, apps, all that tech stuff. That curiosity dragged me into coding and web development.
+
+Right now, I'm learning to build websites, messing around with Python, improving my English, and trying to get better every day. Sounds simple, but trust me, every little step counts.
+
+I’m not here to just write boring lines of code. I wanna create cool stuff, build things people actually enjoy using, and see where this journey takes me.
+
+      <div class="about-tags">
+        <span>Based in Mashhad</span>
+        <span>Learning Python</span>
+        <span>Learning Web Development</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== APPROACH ===================== -->
+<section class="approach" id="approach">
+  <span class="section-tag reveal-wipe">02 — Approach</span>
+  <h2 class="approach-title split-reveal">I don't write the code. I write what it becomes.</h2>
+  <div class="approach-card parallax-el reveal-blur" data-speed="0.1" data-tilt>
+    <p>Real talk — AI writes most of the actual code these days. What I do is decide what a project should feel like, how it should work, and why it's even worth building in the first place. I take whatever the AI generates and shape it into something with a real identity — a purpose, a personality, actual value. That's the part that's on me.</p>
+    <p>Anyone can prompt some code into existence. Knowing what to build, and giving it a soul, is the actual skill.</p>
+  </div>
+</section>
+
+<!-- ===================== WORK ===================== -->
+<section class="work" id="work">
+  <span class="section-tag reveal-wipe">03 — Work</span>
+  <h2 class="section-title split-reveal">A few things I've built</h2>
+
+  <div class="work-grid">
+    <a href="https://fpsgame.fsbwryfrd.workers.dev/" target="_blank" rel="noopener noreferrer" class="work-card reveal-slide-r" style="--d:0" data-project="fps" aria-label="FPS Shooter — play in browser">
+      <div class="work-card-bg" aria-hidden="true"></div>
+      <div class="work-card-top">
+        <span class="work-tag">Game</span>
+        <svg class="work-arrow" width="18" height="18" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="work-card-body">
+        <h3 class="work-title">FPS Shooter</h3>
+        <p class="work-desc">A fast-paced first-person shooter that runs straight in the browser — no install, just load in and start shooting.</p>
+      </div>
+    </a>
+
+    <a href="https://kingvon.fsbwryfrd.workers.dev/" target="_blank" rel="noopener noreferrer" class="work-card reveal-up" style="--d:1" data-project="tribute" aria-label="King Von tribute site">
+      <div class="work-card-bg" aria-hidden="true"></div>
+      <div class="work-card-top">
+        <span class="work-tag">Tribute</span>
+        <svg class="work-arrow" width="18" height="18" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="work-card-body">
+        <h3 class="work-title">King Von Tribute</h3>
+        <p class="work-desc">A tribute page built in memory of King Von, one of my favorite rappers — made to keep his legacy alive.</p>
+      </div>
+    </a>
+
+    <a href="https://t.me/g4elias_bot" target="_blank" rel="noopener noreferrer" class="work-card reveal-slide-l" style="--d:2" data-project="bot" aria-label="AI Telegram bot — g4elias_bot">
+      <div class="work-card-bg" aria-hidden="true"></div>
+      <div class="work-card-top">
+        <span class="work-tag">Telegram Bot</span>
+        <svg class="work-arrow" width="18" height="18" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="work-card-body">
+        <h3 class="work-title">AI Telegram Bot</h3>
+        <p class="work-desc">An AI-powered Telegram bot that chats, answers, and helps out — built to feel smart and useful in every conversation.</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ===================== SOCIAL ===================== -->
+<section class="social" id="social">
+  <span class="section-tag reveal-wipe">04 — Social</span>
+  <h2 class="section-title split-reveal">You can find me beyond this page too</h2>
+
+  <div class="social-grid">
+    <a href="https://instagram.com/g4elias" target="_blank" rel="noopener noreferrer" class="social-card reveal-slide-r" style="--d:0" data-platform="instagram" aria-label="Elias Ghassabi's Instagram — g4elias">
+      <div class="social-card-bg" aria-hidden="true"></div>
+      <div class="social-card-top">
+        <span class="social-icon" aria-hidden="true">
+          <img src="icon-instagram.png" alt="" loading="lazy">
+        </span>
+        <svg class="social-arrow" width="18" height="18" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="social-card-bottom">
+        <span class="social-name">Instagram</span>
+        <span class="social-handle">@g4elias</span>
+      </div>
+    </a>
+
+    <a href="https://t.me/g4elias" target="_blank" rel="noopener noreferrer" class="social-card reveal-up" style="--d:1" data-platform="telegram" aria-label="Elias Ghassabi's Telegram — g4elias">
+      <div class="social-card-bg" aria-hidden="true"></div>
+      <div class="social-card-top">
+        <span class="social-icon" aria-hidden="true">
+          <img src="icon-telegram.png" alt="" loading="lazy">
+        </span>
+        <svg class="social-arrow" width="18" height="18" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="social-card-bottom">
+        <span class="social-name">Telegram</span>
+        <span class="social-handle">@g4elias</span>
+      </div>
+    </a>
+
+    <a href="https://tiktok.com/@g4elias" target="_blank" rel="noopener noreferrer" class="social-card reveal-slide-l" style="--d:2" data-platform="tiktok" aria-label="Elias Ghassabi's TikTok — g4elias">
+      <div class="social-card-bg" aria-hidden="true"></div>
+      <div class="social-card-top">
+        <span class="social-icon" aria-hidden="true">
+          <img src="icon-tiktok.png" alt="" loading="lazy">
+        </span>
+        <svg class="social-arrow" width="18" height="18" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="social-card-bottom">
+        <span class="social-name">TikTok</span>
+        <span class="social-handle">@g4elias</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<script src="script.js" defer></script>
+</body>
+</html>
